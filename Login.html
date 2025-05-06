@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <link src="./app.css" rel="stylesheet" type="text/css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <html data-theme="nord"> 
+    <title>Document</title>
+</head>
+<body class="min-h-screen flex">
+    
+    <div class="w-full md:w-1/2 flex items-center justify-center bg-white px-6">
+      <form class="w-full max-w-sm space-y-5">
+        <h2 class="text-4xl font-bold text-center">Iniciar Sesión</h2>
+
+        <input type="text" placeholder="Usuario" class="input input-bordered w-full focus:outline-none focus:ring-0" />
+        <input type="password" placeholder="Contraseña" class="input input-bordered w-full focus:outline-none focus:ring-0" />
+
+        <div role="tablist" class="tabs tabs-border tabs-md items-center justify-center mb-2  duration-500 ease-in-out">
+            <a role="tab" class="tab tab-active  border-b-1  " id="tab-rfc">R.F.C</a>
+            <a role="tab" class="tab" id="tab-address  border-b-1 ">N&uacute;mero de direcci&oacute;n</a>
+        </div>
+
+        
+        <div class="bg-gray-100 rounded p-4 text-sm text-center mt-8">
+          [ CAPTCHA ]
+        </div>
+
+        <button type="submit" class="btn bg-sky-500 w-full text-base-100">Iniciar Sesión</button>
+
+        <div class="text-center">
+          <a href="#" class="text-sm text-blue-500 hover:underline">¿Olvidaste tu contraseña?</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="hidden md:flex md:w-1/2 bg-sky-700 items-center justify-center text-white">
+      <div class="text-center">
+        <img src="logo.png" alt="Logo" class=" mx-auto mb-4" />
+        <h1 class="text-7xl font-bold">Invoice Delivery</h1>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('[role="tab"]');
+
+        tabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('tab-active'));
+        
+            tab.classList.add('tab-active');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

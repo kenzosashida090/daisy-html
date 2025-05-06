@@ -1,0 +1,9 @@
+
+@import "tailwindcss";
+@plugin "daisyui" {
+    themes: abyss;
+};
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.bg-log {
+    background-color: red
+}
