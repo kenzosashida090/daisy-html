@@ -1,5 +1,4 @@
 
-@import "tailwindcss";
 @plugin "daisyui" {
     themes: abyss;
 };
@@ -7,3 +6,8 @@
 .bg-log {
     background-color: red
 }
+body:has(dialog[open]) {
+    overflow: hidden !important;
+    padding-right: 0 !important;
+  }
+

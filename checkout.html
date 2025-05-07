@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <link href="./app.css" rel="stylesheet" type="text/css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <html data-theme="nord"> 
+    <title>Document</title>
+  <style>
+    [data-theme="nord"]{
+      --color-primary:#ff2400;
+      --color-secondary:#c42810;
+    }
+  </style>
+</head>
+<body class="flex flex-col lg:flex-row  transition-all duration-300"> 
+  <div class="block lg:hidden bg-base-100 px-2 flex  justify-between items-center  shadow-md border-b-1 border-base-200 h-16 px-4">
+    <div class="drawer drawer-top ">
+      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <div class="flex-none lg:hidden">
+          <label for="my-drawer" class="btn btn-square btn-ghost">
+            <div class="tooltip tooltip-right" data-tip="Menu">
+              <i class='bx bx-menu bx-sm'></i>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="drawer-side">
+        <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+        <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+          <!-- Sidebar content here -->
+          <li><a>Sidebar Item 1</a></li>
+          <li><a>Sidebar Item 2</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="avatar avatar-placeholder">
+      <div class="bg-neutral text-neutral-content w-10 rounded-full">
+        <span class="text-xl">D</span>
+      </div>
+    </div>
+  </div>
+  
+  <aside class="min-h-screen transition-all duration-300 ease-in-out
+           hidden lg:block lg:w-64
+           text-base-content shadow-md border-r-2 border-base-200
+           bg-base-100">
+    <div class="flex items-center h-16 px-2 justify-center lg:justify-end">
+      <i class='bx bx-dock-left cursor-pointer rounded-2xl hover:bg-base-300 p-2 transition-all duration-300'></i>
+    </div>
+  
+    <nav class="flex flex-col p-2 space-y-2">
+      <a href="#" class="group flex items-center text-sm hover:bg-base-300 rounded-md py-2 px-2">
+        <div class="tooltip"  data-tip="Home">
+
+            <i  class='bx bx-home text-secondary bx-sm '></i>
+        </div>
+        <span  class=" pl-2 text-md hidden lg:inline ">Inicio</span>
+      </a>
+  
+  
+      <div tabindex="0" class="collapse collapse-arrow cursor-pointer">
+        <div class="collapse-title hover:bg-base-300 pl-2 text-sm flex items-center">
+            <i class='bx bx-check-square mr-2 bx-sm text-secondary'></i>
+            <span class="hidden lg:inline">Aprobación órdenes</span>
+        </div>
+        <div class="collapse-content text-sm flex flex-col space-y-0 hidden lg:inline">
+          <a class="px-3 py-2 text-sm hover:text-primary transition-all duration-100">
+            <span class="hidden lg:inline">Aprobar/rechazar orden</span>
+          </a>
+        </div>
+      </div>
+      <div tabindex="0" class="collapse collapse-arrow cursor-pointer">
+        <div class="collapse-title hover:bg-base-300 pl-2 text-sm flex items-center">
+            <i class='bx bx-package bx-sm mr-2 text-secondary'></i> 
+          <span class="hidden lg:inline">CFDI (XML) s/órden de compra</span>
+        </div>
+        <div class="collapse-content text-sm flex flex-col space-y-0 hidden lg:inline">
+          <a class="px-3 py-2 text-sm hover:text-primary transition-all duration-100">
+            <span class="hidden lg:inline">Aprobar/rechazar orden</span>
+          </a>
+        </div>
+      </div>
+      <div tabindex="0" class="collapse collapse-arrow cursor-pointer">
+        <div class="collapse-title hover:bg-base-300 pl-2 text-sm flex items-center"> 
+            <i class='bx bx-file bx-sm mr-2 text-secondary' ></i> 
+            <span class="hidden lg:inline">CFDI (XML) s/órden de compra</span>
+        </div>
+        <div class="collapse-content text-sm flex flex-col space-y-0 hidden lg:inline ">
+
+            <div class="border-l-2 border-base-content/30 border-base-300 hover:border-primary transition-all duration-100">
+                <a class="group relative flex items-center px-3 py-2 text-sm  rounded-md hover:text-primary transition-all duration-100">
+                    
+                    <span class="pl-1 hidden lg:inline">Aprobar/rechazar órden de compra</span>
+                    <i class='bx bx-chevron-right' ></i>
+                </a>
+            </div>
+        </div>
+      </div>
+  
+      <div tabindex="0" class="collapse collapse-arrow cursor-pointer">
+        <div class="collapse-title hover:bg-base-300 pl-2 text-sm flex items-center ">
+            <i class='bx bx-bus  mr-2 bx-sm text-secondary'></i>
+            <span class="hidden lg:inline">Transportista</span>
+        </div>
+        <div class="collapse-content text-sm flex flex-col space-y-0 hidden lg:inline">
+
+            <div class="border-l-2 border-base-content/30 border-base-300 hover:border-primary transition-all duration-100">
+                <a class="group relative flex items-center px-3 py-2 text-sm  rounded-md hover:text-primary transition-all duration-100">
+                    
+                    <span class="pl-1 hidden lg:inline">Aprobar/rechazar órden de compra</span>
+                    <i class='bx bx-chevron-right' ></i>
+                </a>
+            </div>
+            <div class="border-l-2 border-base-content/30 border-base-300 hover:border-primary transition-all duration-100">
+                <a class="group relative flex items-center px-3 py-2 text-sm  rounded-md hover:text-primary transition-all duration-100">
+                    <span class="pl-1 hidden lg:inline">Aprobar/rechazar órden de compra</span>
+                    <i class='bx bx-chevron-right' ></i>
+                </a>
+            </div>
+        </div>
+      </div>
+      <div tabindex="0" class="collapse collapse-arrow cursor-pointer">
+        <div class="collapse-title hover:bg-base-300 pl-2 text-sm flex flex-items"> 
+            <i class='bx bx-credit-card bx-sm text-secondary mr-2' ></i>
+            <span class="hidden lg:inline">CFDI (XML) anticipos</span>
+        </div>
+        <div class="collapse-content text-sm flex flex-col space-y-0 hidden lg:inline">
+
+            <div class="border-l-2 border-base-content/30 border-base-300 hover:border-primary transition-all duration-100">
+                <a class="group relative flex items-center  justify-between px-3 py-2 text-sm  rounded-md hover:text-primary transition-all duration-100">
+                    
+                    <span class="pl-1 hidden lg:inline">lorem-lp</span>
+                    <i class='bx bx-chevron-right' ></i>
+                </a>
+            </div>
+            <div class="border-l-2 border-base-content/30 border-base-300 hover:border-primary transition-all duration-100">
+                <a class="group relative flex items-center justify-between px-3 py-2 text-sm  rounded-md hover:text-primary transition-all duration-100">
+                    <span class="pl-1 hidden lg:inline">Aprobar/rechazar órden de compra</span>
+                    <i class='bx bx-chevron-right' ></i>
+                </a>
+            </div>
+        </div>
+      </div>
+      <a href="#" class="group relative flex items-center text-sm hover:bg-base-300 rounded-md hover:text-base-content py-2 px-2">
+        <i class='bx bx-cog bx-sm text-secondary ' ></i>  <span class="pl-2 text-md hidden lg:inline">Otros</span>
+    </a>
+
+    </nav>
+  </aside>
+
+      <main class="flex-1 p-8 bg-base-300 overflow-x-hidden">
+        <div class="avatar avatar-placeholder justify-end flex items-center mb-6">
+          <div class="bg-secondary text-neutral-content w-10 rounded-full">
+            <span class="text-lg">U</span>
+          </div>
+        </div>
+        <div class="mb-4 pb-3 flex items-center justify-between">
+          <h1 class="text-2xl font-semibold">Checkout</h1>
+      </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+          <div class="lg:col-span-8 space-y-6">
+            <div class="alert alert-warning shadow-lg">
+              <div>
+                <span>Tu orden se mantendra hasta Abril 30, 04:20 AM.</span>
+              </div>
+            </div>
+          
+            <div class="card bg-base-100 shadow-md p-4">
+              <h2 class="text-lg font-semibold mb-4">Información de contacto</h2>
+              <div class="alert alert-success">
+                <span>Te hemo enviado los detalles de tu pago a tu correo.</span>
+              </div>
+              <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div><strong>Nombre:</strong> Alejandro Hernandez </div>
+                <div><strong>Email:</strong> kenzosashida1@gmail.com</div>
+                <div><strong>Telefono:</strong> +551122334455</div>
+              </div>
+            </div>
+      
+           
+            <div class="card bg-base-100 shadow-md p-4">
+              <h2 class="text-lg font-semibold mb-4">Detalles de pago</h2>
+              <div class="mb-4 w-full px-4">
+                <label class="input w-full ">
+                    <i class='bx bx-credit-card-alt bx-sm text-secondary'></i>
+                    <input type="text" class="w-full" placeholder="N&uacute;mero de Tarjeta" />
+                  </label>
+                  
+              </div>
+              <div class="form-control px-4 mb-4">
+                <label class="input w-full ">
+                    <i class='bx bx-user bx-sm text-secondary' ></i>
+                    <input type="text" class="w-full" placeholder="Nombre del Titular de la Tarjeta" />
+                </label>
+            </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-control px-4">
+                  <fieldset class="fieldset flex lg:flex-row flex-col gap-4">
+                    <legend class="fieldset-legend font-semibold">Fecha de Expiraci&oacute;n</legend>
+                    <select class="select">
+                      <option disabled selected>Seleccione Mes</option>
+                      <option>01</option>
+                      <option>02</option>
+                      <option>03</option>
+                      <option>04</option>
+                      <option>05</option>
+                      <option>06</option>
+                    </select>
+                    <select class="select">
+                      <option disabled selected>Seleccione Año</option>
+                      <option>2026</option>
+                      <option>2027</option>
+                      <option>2028</option>
+                      <option>2029</option>
+                      <option>2030</option>
+                      <option>2040</option>
+                    </select>
+                  </fieldset>
+                </div>
+                <div class=" px-4 focus:outline-none focus:ring-0">
+                  <fieldset class="fieldset focus:outline-none focus:ring-0">
+                    <legend class="fieldset-legend hidden md:block">CVV</legend>
+                    <label class="input focus:outline-none focus:ring-0">
+                     
+                      <input type="text " class="input focus:outline-none focus:ring-0" placeholder="CVV" />
+                      <i class='bx bx-info-circle bx-sm'></i>
+                    </label>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+      
+           
+            <div class="card bg-base-100 shadow-md p-4">
+              <h2 class="text-lg font-semibold mb-4">Poliza de cancelación</h2>
+              <p class="text-sm text-base-content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia nostrum est dicta ut ex accusamus, illo sint, et, rem placeat error deleniti. Omnis cupiditate, dignissimos doloremque ratione dolore molestias fuga!
+              </p>
+              <a onclick="my_modal_2.showModal()" class="link link-primary text-sm mt-2 inline-block">See more details</a>
+            </div>
+        </div>
+        
+        <dialog id="my_modal_2" class="modal  overflow-x-hidden z-50">
+            <div class="modal-box">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                  </form>
+                <div class="flex items-center space-x-2">
+                    <i class='bx bx-shield-quarter text-warning bx-lg' ></i>
+                    <h2 class="py-4 text-3xl font-semibold">Poliza de cancelación</h2>
+                </div>
+
+                <p class="p-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam labore necessitatibus ea aliquam ipsum error libero harum debitis neque quasi blanditiis, ut cupiditate, eaque perferendis earum ab veritatis ducimus totam?</p>
+                <ul class="list bg-base-100 rounded-box shadow-md">
+  
+                    <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Pasos para cancelación</li>
+                    
+                    <li class="list-row">
+                      <div class="text-4xl font-thin opacity-30 tabular-nums">01</div>
+                      <div class="list-col-grow">
+                        <p class="text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam labore necessitatibus ea aliquam ipsum</p>
+                      </div>
+                    </li>
+                    
+                    <li class="list-row">
+                      <div class="text-4xl font-thin opacity-30 tabular-nums">02</div>
+                      
+                      <div class="list-col-grow">
+                        <p class="text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam labore necessitatibus ea aliquam ipsum</p>
+                      </div>
+                    </li>
+                    
+                    <li class="list-row">
+                      <div class="text-4xl font-thin opacity-30 tabular-nums">03</div>
+                      
+                      <div class="list-col-grow">
+                        <p class="text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam labore necessitatibus ea aliquam ipsum</p>
+                      </div>
+                    </li>
+                    
+                  </ul>
+            </div>
+            
+            </dialog>
+
+
+
+          <div class="lg:col-span-4">
+            <div class="card bg-base-100 shadow-md p-4 space-y-4  ">
+              <h2 class="text-xl font-semibold">Res&uacute;men de Pago</h2>
+              <div class="text-sm space-y-2">
+                <div class="flex items-center justify-between">  
+                    <div class="flex items-center justify-center  space-x-1">
+                        <i class='bx bx-package text-secondary mt-1' ></i>
+                        <p class="text-primary font-semibold">Articulos seleccionados:</p> 
+                    </div>
+                   
+                    <p class="font-bold text-md">1</p>
+                </div>
+               
+                <div class="flex items-center justify-between">
+                    
+                    <div class="flex items-center space-x-1">
+                        <i class='bx bx-map text-secondary' ></i>
+                        <p class="text-primary font-semibold">Punto de recolecci&oacute;:</p> 
+                    </div>
+                    <p class="font-bold text-md wrap text-right">2da Cerrada de San Pedo 54130</p>
+                </div>
+                
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-1">
+                        <i class='bx bx-calendar text-secondary'></i>
+                        <p class="text-primary font-semibold">Fecha de recolecci&oacute;n:</p> 
+                    </div>
+                    <p class="font-bold text-md">Lun, 14 May 2025 - 10:00</p>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-1">
+                        <i class='bx bx-calendar text-secondary'></i>
+                        <p class="text-primary font-semibold">Fecha de entrega:</p> 
+                    </div>
+                    <p class="font-bold text-md">Mar, 27 May 2025 - 10:00</p>
+                </div>
+                
+              
+              </div>
+      
+              <div class="divider"></div>
+      
+              <h1 class="text-2xl font-semibold">Detalles del Precio</h1>
+                <ul class="text-sm space-y-1">
+                  <li>Precio del viaje: MXN 230/día</li>
+                  <li>Tarifa de entrega: MXN 50</li>
+                  <li>Duración: 4 días</li>
+                  <li>Impuesto: MXN 0</li>
+                </ul>
+      
+              <div class="divider"></div>
+              <div class="flex justify-between items-center  text-sm font-semibold">
+                  <h1 class="text-2xl font-bold">Total: </h1>
+                  <div class="flex items-center space-x-2">
+                      <i class='bx bx-purchase-tag-alt bx-lg bx-rotate-90 text-warning' ></i>
+                      <div class="stat-value">$89,400</div>
+                  </div>
+              </div>
+      
+              <div class="form-control">
+                <label class="cursor-pointer label">
+                  <input type="checkbox" class="checkbox checkbox-error text-base-100" checked />
+                  <span class="label-text ml-2 text-sm">I agree to <a class="link text-red-400">Terms & Conditions</a></span>
+                </label>
+              </div>
+              <button class="btn bg-red-700 text-base-100 w-full">Pay for My Booking</button>
+            </div>
+          </div>
+      
+        </div>
+        
+      </main>
+
+</body>
+
+</html>
